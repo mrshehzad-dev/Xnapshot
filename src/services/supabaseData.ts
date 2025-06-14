@@ -14,13 +14,9 @@ class SupabaseDataService {
       .from('users')
       .select('*')
       .eq('auth_user_id', authUser.id)
-      .single()
+      .maybeSingle()
 
     if (error) {
-      // Handle the case where no user record exists yet
-      if (error.code === 'PGRST116') {
-        return null
-      }
       console.error('Error fetching user:', error)
       return null
     }
