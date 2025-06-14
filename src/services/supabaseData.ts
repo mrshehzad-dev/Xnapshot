@@ -17,6 +17,10 @@ class SupabaseDataService {
       .single()
 
     if (error) {
+      // Handle the case where no user record exists yet
+      if (error.code === 'PGRST116') {
+        return null
+      }
       console.error('Error fetching user:', error)
       return null
     }
