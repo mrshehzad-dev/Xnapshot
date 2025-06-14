@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, MessageCircle, Repeat2, Share, Eye, TrendingUp } from 'lucide-react';
 import { Tweet } from '../types';
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Twitter, TrendingUp, BarChart3, Users, Loader2, AlertCircle, Mail, Lock, User, ArrowRight } from 'lucide-react'
+import { useState } from 'react'
+import { TrendingUp, BarChart3, Users, Loader2, AlertCircle, Mail, Lock, User, ArrowRight } from 'lucide-react'
 import { useSupabaseAuth } from '../../hooks/useSupabaseAuth'
 
 export default function LoginPage() {

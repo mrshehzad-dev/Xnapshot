@@ -57,7 +57,7 @@ class SupabaseDataService {
 
     // Otherwise, fetch fresh data from X API via edge function
     try {
-      const { data: freshTweets, error: apiError } = await supabase.functions.invoke('x-api', {
+      const { error: apiError } = await supabase.functions.invoke('x-api', {
         body: {
           endpoint: 'tweets',
           start_time: startOfDay.toISOString(),
@@ -166,7 +166,7 @@ class SupabaseDataService {
 
   async refreshUserData(): Promise<User | null> {
     try {
-      const { data, error } = await supabase.functions.invoke('x-api', {
+      const { error } = await supabase.functions.invoke('x-api', {
         body: { endpoint: 'user' }
       })
       

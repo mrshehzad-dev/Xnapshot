@@ -8,7 +8,7 @@ type Tweet = Database['public']['Tables']['tweets']['Row']
 type DailyMetrics = Database['public']['Tables']['daily_metrics']['Row']
 
 export const useSupabaseData = () => {
-  const { user: authUser, isAuthenticated } = useSupabaseAuth()
+  const { isAuthenticated } = useSupabaseAuth()
   const [user, setUser] = useState<User | null>(null)
   const [todaysTweets, setTodaysTweets] = useState<Tweet[]>([])
   const [dayMetrics, setDayMetrics] = useState<DailyMetrics | null>(null)

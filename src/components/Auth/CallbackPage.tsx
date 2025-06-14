@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useSupabaseAuth } from '../../hooks/useSupabaseAuth'
 import { Loader2 } from 'lucide-react'
 
@@ -7,7 +7,7 @@ interface CallbackPageProps {
 }
 
 export default function CallbackPage({ onAuthComplete }: CallbackPageProps) {
-  const { handleCallback, isLoading, error } = useSupabaseAuth()
+  const { handleCallback, error } = useSupabaseAuth()
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)

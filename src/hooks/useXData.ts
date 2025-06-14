@@ -19,9 +19,8 @@ const transformXTweet = (xTweet: XTweet, author: XUser): Tweet => {
     xTweet.public_metrics.reply_count +
     xTweet.public_metrics.quote_count;
 
-  const impressions = xTweet.non_public_metrics?.impression_count || 
-                     xTweet.organic_metrics?.impression_count || 
-                     totalEngagement * 10; // Fallback estimation
+  // Use fallback estimation for impressions since non_public_metrics and organic_metrics are not available
+  const impressions = totalEngagement * 10; // Fallback estimation
 
   const engagementRate = impressions > 0 ? (totalEngagement / impressions) * 100 : 0;
 

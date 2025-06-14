@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase'
-import { AuthError, User } from '@supabase/supabase-js'
+import { User } from '@supabase/supabase-js'
 
 export interface XAuthData {
   access_token: string
@@ -151,7 +151,7 @@ class SupabaseAuthService {
   }
 
   onAuthStateChange(callback: (user: User | null) => void) {
-    return supabase.auth.onAuthStateChange((event, session) => {
+    return supabase.auth.onAuthStateChange((_, session) => {
       callback(session?.user || null)
     })
   }

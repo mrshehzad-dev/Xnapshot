@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { User, Calendar, BarChart3, TrendingUp, Eye, Heart, MessageCircle, Repeat2, LogOut, RefreshCw, Twitter, Link, CheckCircle, AlertCircle } from 'lucide-react'
+import { useState } from 'react'
+import { User, Calendar, BarChart3, TrendingUp, Eye, Heart, MessageCircle, LogOut, RefreshCw, Twitter, Link, CheckCircle } from 'lucide-react'
 import { useSupabaseData } from '../hooks/useSupabaseData'
 import { useSupabaseAuth } from '../hooks/useSupabaseAuth'
 import TweetCard from './TweetCard'

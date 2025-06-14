@@ -61,7 +61,7 @@ export const useXAuth = () => {
       
       console.log('State validation successful');
 
-      const tokenData = await xApiService.exchangeCodeForToken(code, state);
+      await xApiService.exchangeCodeForToken(code, state);
       console.log('Token exchange successful');
       
       sessionStorage.removeItem('oauth_state');
